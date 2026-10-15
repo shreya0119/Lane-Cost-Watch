@@ -6,7 +6,7 @@ from pathlib import Path
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from cost_watch.notes import ALL_ROUTES, NOTE_WINDOW_WEEKS, load_notes  # noqa: E402
+from cost_watch.notes import ALL_ROUTES, load_notes  # noqa: E402
 
 DATA = Path("data")
 OUTPUT = Path("output/flagged_routes.csv")
@@ -54,8 +54,8 @@ def check_citations_are_grounded(out, notes):
         note = note.iloc[0]
         if note.applies_to not in (row.route, ALL_ROUTES):
             problems.append(f"{row.route} {row.week_of}: {note.note_id} is for {note.applies_to}")
-        weeks_after = (pd.Timestamp(row.week_of) - note.note_week).days // 7
-        if not 0 <= weeks_after < NOTE_WINDOW_WEEKS:
+        week = pd.Timestamp(row.week_of)
+        if not note.note_week <= week <= note.covers_until:
             problems.append(f"{row.route} {row.week_of}: {note.note_id} is outside its time window")
         if row.flagged != "No (justified)":
             problems.append(f"{row.route} {row.week_of}: has a note id but flagged={row.flagged}")
