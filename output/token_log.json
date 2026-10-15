@@ -1,9 +1,9 @@
 {
   "model": "qwen2.5-coder:7b",
   "live": true,
-  "flagged_weeks": 13,
-  "calls": 6,
+  "flagged_weeks": 21,
+  "calls": 10,
   "cache_hits": 0,
-  "input_tokens": 1183,
-  "output_tokens": 246
+  "input_tokens": 1972,
+  "output_tokens": 405
 }

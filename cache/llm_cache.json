@@ -14,6 +14,11 @@
     "input_tokens": 191,
     "output_tokens": 39
   },
+  "22aa460e0c7af35b85a467403047302ec4fb15363335a79e22377fd97073bfae": {
+    "content": "{\"explains_rise\": false, \"evidence\": \"A new vehicle tracking mandate was introduced for commercial fleets; compliance costs were absorbed by transporters without a rate change.\"}",
+    "input_tokens": 191,
+    "output_tokens": 38
+  },
   "5f1ebbc9b8c00788a7e097ba3f92ac83cdfe16f02e0f054b30d09693338be55c": {
     "content": "{\"explains_rise\": false, \"evidence\": \"A new toll plaza was commissioned on a national highway stretch, but the affected routes are not part of this dataset.\"}",
     "input_tokens": 191,
@@ -59,6 +64,16 @@
     "input_tokens": 213,
     "output_tokens": 47
   },
+  "c282532645e2d2563695a9be282bbdb3272d44663b25737bdf6134eeaf46b84d": {
+    "content": "{\"explains_rise\": false, \"evidence\": \"Highway authorities confirmed the Chennai-Bangalore route returned to normal conditions after flood-related repairs were completed.\"}",
+    "input_tokens": 193,
+    "output_tokens": 36
+  },
+  "daa804723c9e638c16bce4978b5fc1f1a43e0e252bff3c6d0ae2a1992cee3fb4": {
+    "content": "{\"explains_rise\": false, \"evidence\": \"A new vehicle tracking mandate was introduced for commercial fleets; compliance costs were absorbed by transporters without a rate change.\"}",
+    "input_tokens": 191,
+    "output_tokens": 38
+  },
   "e1238c9b270a15416754d158005f0f77c657774f6e01c9968c1771b36f5a6ee6": {
     "content": "{\"explains_rise\": true, \"evidence\": \"Diesel prices rose nationwide starting this week, pushing up transportation costs across all routes by roughly 5-7%.\"}",
     "input_tokens": 192,
@@ -73,6 +88,11 @@
     "content": "{\"explains_rise\": false, \"evidence\": \"No significant disruptions were reported on the Kolkata-Bhubaneswar corridor this quarter; freight movement remained normal.\"}",
     "input_tokens": 194,
     "output_tokens": 36
+  },
+  "eb298750952d950287a43669ebeb5913fc6733587dc29e993e240fc60c8edf2c": {
+    "content": "{\"explains_rise\": true, \"evidence\": \"Heavy flooding on the Chennai-Bangalore highway disrupted normal truck movement from Feb 24 to Mar 8, forcing longer detours and higher trip costs.\"}",
+    "input_tokens": 214,
+    "output_tokens": 47
   },
   "ee8522a49ffd9d012bd3b210a68ce53ea4c1b43d26000d6f1c5d33b932328c1b": {
     "content": "{\"explains_rise\": true, \"evidence\": \"A regional festival week saw a temporary surcharge applied by transporters on the Ahmedabad-Mumbai corridor due to high demand and limited truck availability.\"}",
