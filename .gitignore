@@ -23,5 +23,8 @@ env/
 Thumbs.db
 desktop.ini
 
+# Case-study input files (FreightTiger's material; reviewers place their copies in data/)
+data/
+
 # Scratch runs (the submitted output/ and cache/ ARE committed)
 runs/tmp/
