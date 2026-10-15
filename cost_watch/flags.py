@@ -6,6 +6,12 @@ from cost_watch.metrics import HISTORY_WEEKS
 Z_THRESHOLD = 3.0    # "3 normal wobbles" above usual
 MIN_RISE_PCT = 5.0   # ignore moves too small to matter; diesel note N003 is 5-7%
 
+# Backstop for what z-scores miss: after a spike (or during a slow creep) the trailing
+# std/mean absorb the rise, so later weeks stop looking surprising. <1% of normal weeks
+# are 20%+ above their own history, <2% are 25%+ above peers.
+OWN_BACKSTOP_PCT = 20.0
+PEER_BACKSTOP_PCT = 25.0
+
 
 def _trailing(series_by_route, stat):
     """Mean or std of up to 8 earlier weeks (current week excluded)."""
@@ -28,7 +34,9 @@ def add_flags(w):
     gap_std = _trailing(by_route["vs_peer_pct"], "std")
     w["z_peer"] = (w["vs_peer_pct"] - gap_mean) / gap_std
 
-    unusual = (w["z_own"] > Z_THRESHOLD) | (w["z_peer"] > Z_THRESHOLD)
+    surprising = (w["z_own"] > Z_THRESHOLD) | (w["z_peer"] > Z_THRESHOLD)
+    far_above = (w["vs_own_pct"] >= OWN_BACKSTOP_PCT) | (w["vs_peer_pct"] >= PEER_BACKSTOP_PCT)
+    unusual = surprising | far_above
     rising = w["vs_own_pct"] >= MIN_RISE_PCT
     w["is_flagged"] = unusual & rising
     return w
