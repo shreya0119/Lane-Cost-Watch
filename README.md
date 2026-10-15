@@ -78,7 +78,7 @@ The default run replays saved answers from `cache/llm_cache.json`. Each entry is
 
 From `runs/run1/token_log.json` (each run writes its own `token_log.json` next to its output):
 
-| | |
+| Metric | Value |
 |---|---|
 | LLM calls | 10 (only flagged weeks with a candidate note are sent; 21 flagged weeks) |
 | Input tokens | 1,972 |
