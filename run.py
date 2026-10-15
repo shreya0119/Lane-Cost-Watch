@@ -51,8 +51,10 @@ def main():
 
     pd.io.common.Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     report.to_csv(args.out, index=False)
+    stats = {"model": MODEL, "live": args.live, "flagged_weeks": len(report), **llm.stats}
+    pd.io.common.Path(args.out).with_name("token_log.json").write_text(json.dumps(stats, indent=2))
     print(f"{len(report)} flagged weeks written to {args.out}")
-    print(json.dumps({"model": MODEL, "live": args.live, **llm.stats}))
+    print(json.dumps(stats))
 
 
 if __name__ == "__main__":
